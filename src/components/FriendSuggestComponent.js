@@ -6,20 +6,8 @@ import AvatarComponent from './AvatarComponent'
 import Data from '../commons/data'
 
 export default class FriendSuggestComponent extends Component {
-    // data = [
-    //     { id: 1, name: 'yasuo', url: require('../assets/img/avenger/yasuo.jpg'), friends: 15 },
-    //     { id: 2, name: 'wonder', url: require('../assets/img/avenger/wonderwoman.jpg'), friends: 1 },
-    //     { id: 3, name: 'wanda', url: require('../assets/img/avenger/wanda.jpg'), friends: 150 },
-    //     { id: 4, name: 'suppergirl', url: require('../assets/img/avenger/suppergirl.jpg'), friends: 5000 },
-    //     { id: 5, name: 'doctor', url: require('../assets/img/avenger/strange.jpg'), friends: 10 },
-    //     { id: 6, name: 'spiderman', url: require('../assets/img/avenger/spiderman.jpeg'), friends: 101 },
-    //     { id: 7, name: 'iron', url: require('../assets/img/avenger/ironman.jpeg'), friends: 321 },
-    //     { id: 8, name: 'flash', url: require('../assets/img/avenger/flash.jpg'), friends: 15 },
-    //     { id: 9, name: 'captain', url: require('../assets/img/avenger/captain.jpg'), friends: 2500 },
-    //     { id: 10, name: 'blackwidow', url: require('../assets/img/avenger/blackwidow.jpeg'), friends: 1023 }
-    // ]
     data = Data
-    //data = Data
+    
     renderContent = () => {
         return (this.data.map((item, index) => {
             return (

@@ -7,9 +7,6 @@
  */
 
 import React from 'react';
-import {SafeAreaView, StyleSheet, ScrollView, View, Text, StatusBar,} from 'react-native';
-import AvatarComponent from './src/components/AvatarComponent';
-import SearchResultComponent from './src/components/SearchResultComponent';
 import AppChatComponent from './src/components/AppChatComponent';
 
 const App = () => {
