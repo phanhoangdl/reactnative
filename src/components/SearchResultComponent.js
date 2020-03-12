@@ -40,13 +40,9 @@ export default class SearchResultComponent extends Component {
                                 </View>
                             )
                         }}
-                        //numColumns={5}
                         keyExtractor={item => item.id.toString()}
                         horizontal={true}
                     />
-                    {/* <View style={{ flex: 1, flexDirection: 'row' }}>
-                    </View> */}
-
                 </View>
             </View>
         )
