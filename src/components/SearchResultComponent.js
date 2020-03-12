@@ -2,7 +2,7 @@
 // nằm phía trên của màn hình
 
 import React, { Component } from 'react'
-import { Text, View, ScrollView } from 'react-native'
+import { Text, View, ScrollView, FlatList } from 'react-native'
 import Icon from 'react-native-vector-icons/Entypo'
 import AvatarComponent from './AvatarComponent'
 import Data from '../commons/data'
@@ -23,16 +23,29 @@ export default class SearchResultComponent extends Component {
 
     render() {
         return (
-            <View style={{ borderStyle: 'solid', borderWidth: 1, borderColor: 'rgba(128,128,128,0.1)', borderLeftColor: '#000000', width:'100%' }}>
-                <View style={{ marginLeft: 5, marginTop: 5  }}>
+            <View style={{ borderStyle: 'solid', borderWidth: 1, borderColor: 'rgba(128,128,128,0.1)', borderLeftColor: '#000000', width: '100%' }}>
+                <View style={{ marginLeft: 5, marginTop: 5 }}>
                     <Text style={{ fontWeight: 'bold', fontSize: 18, marginBottom: 30 }}><Icon name='back-in-time' size={18}></Icon> Danh sách tìm kiếm gần đây </Text>
-                    <ScrollView
+                    {/* <ScrollView
                         horizontal={true}
                     >
                         {this.renderAvatar()}
-                    </ScrollView>
-                    <View style={{ flex: 1, flexDirection: 'row' }}>
-                    </View>
+                    </ScrollView> */}
+                    <FlatList data={this.data}
+                        renderItem={({ item }) => {
+                            return (
+                                <View style={{ alignItems: 'center', justifyContent: 'center' }}>
+                                    <AvatarComponent img={item.url} />
+                                    <Text style={{ marginLeft: 20 }}>{item.name}</Text>
+                                </View>
+                            )
+                        }}
+                        //numColumns={5}
+                        keyExtractor={item => item.id.toString()}
+                        horizontal={true}
+                    />
+                    {/* <View style={{ flex: 1, flexDirection: 'row' }}>
+                    </View> */}
 
                 </View>
             </View>
